@@ -1,0 +1,17 @@
+{
+    trafficRegistrationPoints {
+        id
+        name
+        latestData {
+            volumeByHour
+        }
+        location {
+            coordinates {
+                latLon {
+                    lat
+                    lon
+                }
+            }
+        }
+    }
+}
