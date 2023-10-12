@@ -17,6 +17,7 @@ transform_volumes <- function(traffic_data) {
   list_of_tibbles <- map(traffic_data$trafficData$volume$byHour$edges, ~ {
     .x$node |>
       as_tibble() |>
+      mutate(from = as_datetime(from, tz = "UTC")) |>
       unnest_wider(total) |>
       select(from, volume)
   })
